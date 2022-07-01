@@ -16,11 +16,11 @@ int main(void)
 	/* function to print random numbers*/
 	if (n > 0)
 	{
-		printf("%d is positive", n);
+		printf("%d is positive ", n);
 	}
 	else if (n == 0)
 	{
-		printf("%d is zero", n);
+		printf("%d is zero ", n);
 	}
 	else
 	{
