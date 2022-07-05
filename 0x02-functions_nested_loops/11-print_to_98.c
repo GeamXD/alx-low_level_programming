@@ -24,9 +24,9 @@ void print_to_98(int n)
 	{
 		for (b = n; b >= 98; b--)
 		{
-			if (j != 98)
+			if (b != 98)
 				printf("%d, ", b);
-			else if (j == 98)
+			else if (b == 98)
 				printf("%d\n", b);
 		}
 	}
