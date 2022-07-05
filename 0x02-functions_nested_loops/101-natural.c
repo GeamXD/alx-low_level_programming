@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
+  *main - prints multiples of 3 0r 5 below 1029
   *
-  *
-  *
+  *Return: 0 if successful
   */
 int main(void)
 {
