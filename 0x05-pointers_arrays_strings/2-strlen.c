@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * @_strlen - finds the lenght of a string
+ * _strlen - finds the lenght of a string
  * @s: parameter being checked
  * Return: string lenght
  */
