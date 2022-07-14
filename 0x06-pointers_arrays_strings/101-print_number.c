@@ -1,11 +1,10 @@
 #include "main.h"
 
-void print_uint(unsigned int n);
-
 /**
- * print_number - Prints an integer
- * @n: The integer to print
+ * print_number - prints an integer character wise
+ * @n: the number to print
  */
+
 void print_number(int n)
 {
 	if (n < 0)
@@ -13,17 +12,23 @@ void print_number(int n)
 		_putchar('-');
 		n = -n;
 	}
-
-	print_uint((unsigned int) n);
+	print_helper((unsigned int)n);
 }
 
 /**
- * print_uint - Prints an unsigned integer
- * @n: The unsigned int to print
+ * print_helper - prints an unsigned integer
+ * @n: an unsigned integer to print
  */
-void print_uint(unsigned int n)
+void print_helper(unsigned int n)
 {
-	if (n / 10 != 0)
-		print_uint(n / 10);
-	_putchar(n % 10 + '0');
+
+	if (n < 10)
+	{
+		_putchar(n + '0');
+	}
+	else
+	{
+		print_helper(n / 10);
+		_putchar((n % 10) + '0');
+	}
 }
