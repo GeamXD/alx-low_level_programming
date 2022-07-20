@@ -3,7 +3,7 @@
 /**
  * factorial - prints a factorial
  * @n: parameter
- * Return: factorial 
+ * Return: factorial
  */
 int factorial(int n)
 {

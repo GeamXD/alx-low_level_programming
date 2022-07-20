@@ -1,13 +1,13 @@
 #include "main.h"
 int _sqrt(int n, int i);
 /**
- * _sqrt_recursion - prints square-root 
- * @n: parameter 
+ * _sqrt_recursion - prints square-root
+ * @n: parameter
  * Return: result
  */
 int _sqrt_recursion(int n)
 {
-	return(_sqrt(n, 1));
+	return (_sqrt(n, 1));
 }
 
 /**
