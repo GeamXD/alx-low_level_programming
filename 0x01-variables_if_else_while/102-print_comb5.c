@@ -1,37 +1,46 @@
-#include <stdlib.h>
+#include "main.h"
 #include <stdio.h>
-/* more headers goes there */
 
 /**
-  *main - Entry point
-  *
-  *Return: Always 0 (Success)
-  */
+ * main - prints combination of three digits
+ * Return: 0 if successful
+ */
 int main(void)
 {
-	int n;
+	int i, j;
 
-	for (n = 0; n < 99; n++)
+	i = 0;
+
+	while (i <= 98)
 	{
-		int nn;
+		j = 1;
+		int t, u, tt, uu;
 
-		for (nn = n + 1; nn < 100; nn++)
+		while (j <=  99)
 		{
-			putchar((n / 10) + '0');
-			putchar((n % 10) + '0');
+			t = (i / 10) % 10;
+			tt = (j / 10) % 10;
+			u = i % 10;
+			uu = j % 10;
+
+		if (i < j && i != j)
+		{
+			putchar(t + '0');
+			putchar(u + '0');
 			putchar(' ');
-			putchar((nn / 10) + '0');
-			putchar((nn % 10) + '0');
-
-		if (n != 98)
-		{
+			putchar(tt + '0');
+			putchar(uu + '0');
+			if (i <= 97)
+			{
 			putchar(',');
 			putchar(' ');
+			}
 		}
-		else
-			continue;
+			j++;
 		}
+		i++;
 	}
-	putchar(10);
+	putchar('\n');
+
 	return (0);
 }
