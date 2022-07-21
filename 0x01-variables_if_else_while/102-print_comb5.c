@@ -12,8 +12,12 @@ int main(void)
 
 	while (i <= 98)
 	{
+		int t;
+		int u;
+		int tt;
+		int uu;
+
 		j = 1;
-		int t, u, tt, uu;
 
 		while (j <=  99)
 		{
