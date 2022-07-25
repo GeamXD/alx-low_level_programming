@@ -1,30 +1,27 @@
 #include <stdio.h>
 
 /**
-  *main - finds and prints the sum of even terms
-  *
-  *Return: 0 if successful
-  */
+ * main - fibonacci
+ * Return: 0 if successful
+ */
 int main(void)
 {
-	int i;
-	unsigned long int j, k, next, sum;
+	long int sum = 0;
+	long int term1 = 1;
+	long int term2 = 2;
+	long int fibn = 0;
 
-	j = 1;
-	k = 2;
-	sum = 0;
-
-	for (i = 1; i <= 33; ++i)
+	for (int i = 0; i < 50; i++)
 	{
-		if (j < 4000000 && (j % 2) == 0)
-		{
-			sum = sum + j;
-		}
-		next = j + k;
-		j = k;
-		k = next;
+		fibn = term1 + term2;
+		if ((fibn <= 4000000) && (fibn % 2 == 0))
+	{
+		sum = sum + fibn;
 	}
-
-	printf("%lu\n", sum);
+		term1 = term2;
+		term2 = fibn;
+	}
+		printf("%ld\n", sum + 2); /*add 2 since its 1st even digit*/
 	return (0);
 }
+
