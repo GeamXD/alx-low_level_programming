@@ -7,8 +7,8 @@
 int main(void)
 {
 	long int sum = 0;
-	long int term1 = 1;
-	long int term2 = 2;
+	long int term1 = 0;
+	long int term2 = 1;
 	long int fibn = 0;
 
 	for (int i = 0; i < 50; i++)
@@ -21,7 +21,7 @@ int main(void)
 		term1 = term2;
 		term2 = fibn;
 	}
-		printf("%ld\n", sum + 2); /*add 2 since its 1st even digit*/
+		printf("%ld\n", sum); /*add 2 since its 1st even digit*/
 	return (0);
 }
 
