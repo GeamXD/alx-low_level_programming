@@ -1,22 +1,37 @@
-#include<stdio.h>
-#include "main.h"
+#include <stdio.h>
+
+void primefactors(long int num);
 
 /**
- * main - print the largest prime factor of 612852475143
- * Return: 0 success
+ * main - prints largest prime factor
+ * Return: 0 if successful
  */
 int main(void)
 {
 	long int num = 612852475143;
-	long int p = 3;
 
-	while (num > 1)
-	{
-		if (num % p == 0)
-			num /= p;
-		else
-			p += 2;
-	}
-	printf("%ld\n", p);
+	primefactors(num);
 	return (0);
 }
+
+/**
+ * primefactors - function to print largest prime factors
+ * @num: parameter being checked
+ */
+void primefactors(long int num)
+{
+	int i;
+
+	for (i = 2; num > 1; i++)
+	{
+		while (num % i == 0)
+		{
+			num = num / i;
+		}
+		if (num == 1)
+		{
+			printf("%d\n", i);
+		}
+	}
+}
+
