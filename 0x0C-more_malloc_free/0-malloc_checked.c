@@ -1,25 +1,21 @@
 #include "main.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <limits.h>
 
 /**
- * array_range - creates an array of integers.
- * @min: lower bound
- * @max: upper bound
- *
- * Return: the pointer to the newly created array
+ * malloc_checked - allocates a dynamic memory
+ * @b: size of memory to be created
+ * Return: pointer to the memory space created
  */
-int *array_range(int min, int max)
+
+void *malloc_checked(unsigned int b)
 {
-	int *p, i;
+	int *ptr;
 
-	if (min > max)
-		return (NULL);
+	ptr = malloc(b);
+	if (ptr == NULL)
+		exit(98);
 
-	p = malloc((max - min + 1) * sizeof(*p));
-	if (p == NULL)
-		return (NULL);
-
-	for (i = 0; min <= max; i++, min++)
-		p[i] = min;
-
-	return (p);
+	return (ptr);
 }
