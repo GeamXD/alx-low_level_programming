@@ -9,7 +9,7 @@ void print_rev(char *s)
 	int i;
 	int len = _strlen(s);
 
-	for (i = len; i >= 0; i--)
+	for (i = len; i > 0; i--)
 	{
 		_putchar(s[i]);
 	}
@@ -26,7 +26,7 @@ int _strlen(char *s)
 
 	while (s[lent])
 	{
-		if( s[lent] == '\0')
+		if (s[lent] == ('\0'))
 			break;
 		lent++;
 	}
