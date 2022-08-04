@@ -53,42 +53,56 @@ void print_string(va_list ap)
 
 
 /**
- * print_all - prints anything
+ * print_str - prints string
+ * @list: arguments from print_all
+ */
+void print_str(va_list list)
+{
+	char *s = va_arg(list, char *);
+
+	s == NULL ? printf("(nil)") : printf("%s", s);
+
+}
+
+/**
+ * print_all - prints any type
  * @format: arguments to print
  */
+
 void print_all(const char * const format, ...)
 {
-	va_list ap;
+va_list list;
+int i = 0, j = 0;
+char *sep = "";
 
-	int i = 0, j = 0;
-	char *separator = "";
-
-print_anyStruct printType[] = {
-	{"i", print_int },
-	{"f", print_float},
-	{"s", print_string},
-	{"c", print_char},
+printTypeStruct printType[] = {
+	{ "i", print_int },
+	{ "f", print_float },
+	{ "c", print_char },
+	{ "s", print_str },
 	{NULL, NULL}
 };
 
-	va_start(ap, format);
 
-	while (format && format[i])
+va_start(list, format);
+
+while (format && format[i])
+{
+	j = 0;
+	while (j < 4)
 	{
-		j = 0;
-		while (j < 4)
+		if (*printType[j].type == format[i])
 		{
-			if (*printType[j].type == format[i])
-			{
-				printf("%s", separator);
-				printType[j].printfunc(ap);
-				separator = ", ";
-				break;
-			}
-			j++;
+			printf("%s", sep);
+			printType[j].printer(list);
+			sep = ", ";
+			break;
 		}
-		i++;
+		j++;
 	}
-	printf("\n");
-	va_end(ap);
+	i++;
+}
+
+printf("\n");
+va_end(list);
 }

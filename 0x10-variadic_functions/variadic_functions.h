@@ -17,10 +17,10 @@ void print_strinf(va_list ap);
  * @type: type
  * @printfunc: function to print;
  */
-typedef struct print_anyStruct
+typedef struct printTypeStruct
 {
-	char *type;
-	void (*printfunc)(va_list);
-} print_anyStruct;
+char *type;
+void (*printer)(va_list);
+} printTypeStruct;
 
 #endif
