@@ -10,11 +10,11 @@
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
+	va_list(ap);
+	unsigned int i, res = 0;
+
 	if (separator == NULL)
 		return;
-
-	va_list(ap);
-	int i, res = 0;
 
 	va_start(ap, n);
 
@@ -22,6 +22,8 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	{
 		res = va_arg(ap, const unsigned int);
 		printf("%d", res);
+		if (i != (n - 1))
+			printf("%s", separator);		
 	}
 	va_end(ap);
 	printf("\n");
