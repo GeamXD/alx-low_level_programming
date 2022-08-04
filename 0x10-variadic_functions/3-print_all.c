@@ -90,4 +90,5 @@ print_anyStruct printType[] = {
 		i++;
 	}
 	printf("\n");
+	va_end(ap);
 }
