@@ -1,56 +1,33 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
 #include "variadic_functions.h"
-
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
  * print_int - prints int
- * @ap: parameter for list
+ * @list: arguments from print_all
  */
-void print_int(va_list ap)
+void print_int(va_list list)
 {
-	printf("%d", va_arg(ap, int));
+	printf("%d", va_arg(list, int));
 }
-
-
 
 /**
  * print_float - prints float
- * @ap: parameter for list
+ * @list: arguments from print_all
  */
-void print_float(va_list ap)
+void print_float(va_list list)
 {
-	printf("%f", va_arg(ap, double));
+	printf("%f", va_arg(list, double));
 }
-
-
 
 /**
- * print_char - prints string
- * @ap: parameter for list
+ * print_char - prints int
+ * @list: arguments from print_all
  */
-void print_char(va_list ap)
+void print_char(va_list list)
 {
-	printf("%c", va_arg(ap, int));
+	printf("%c", va_arg(list, int));
 }
-
-
-
-/**
- * print_string - prints string
- * @ap: parameter for list
- */
-void print_string(va_list ap)
-{
-	char *res = va_arg(ap, char *);
-
-	if (res == NULL)
-		printf("(nil)");
-	else
-	printf("%s", res);
-}
-
 
 /**
  * print_str - prints string
