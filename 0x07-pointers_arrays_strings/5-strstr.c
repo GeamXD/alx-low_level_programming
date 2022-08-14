@@ -9,5 +9,20 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	return (strstr(haystack, needle));
+	char *newhaystack = haystack;
+	char *newneddle = needle;
+
+	while (*haystack)
+	{
+		while (*needle)
+		{
+			if (*haystack++ != *needle++)
+			break;
+		}
+		if (!*needle)
+			return (newhaystack);
+		needle = newneddle;
+		newhaystack++;
+		haystack = newhaystack;
+	}
 }
