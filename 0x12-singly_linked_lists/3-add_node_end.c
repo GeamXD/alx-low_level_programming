@@ -8,14 +8,22 @@
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *new_node = malloc(sizeof(list_t));
-	list_t *last = *head;
-	size_t len = 0;
+	list_t *new_node, *last_node;
 
 	if (str == NULL)
 		return (NULL);
 
+	new_node = malloc(sizeof(list_t));
+	if (new_node == NULL)
+		return (NULL);
+
 	new_node->str = strdup(str);
+	if (new_node->str == NULL)
+	{
+		free(new_node);
+		return (NULL);
+	}
+
 	new_node->len = strlen(str);
 	new_node->next = NULL;
 
@@ -24,12 +32,10 @@ list_t *add_node_end(list_t **head, const char *str)
 		*head = new_node;
 		return (new_node);
 	}
-	 /* Else traverse till the last node */
-	while (last->next != NULL)
-		last = last->next;
 
-	/* Change the next of last node */
-	last->next = new_node;
-
+	last_node = *head;
+	while (last_node->next)
+		last_node = last_node->next;
+	last_node->next = new_node;
 	return (new_node);
 }
